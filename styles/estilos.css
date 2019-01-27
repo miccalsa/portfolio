@@ -30,7 +30,8 @@ h1 strong {
 }
 
 .container {
-    width: 1000px;
+    max-width: 1000px;
+    flex: 1;
     margin: 0 auto;
     display: inherit;
     align-items: inherit;
@@ -46,6 +47,7 @@ h1 strong {
     justify-content: space-between;
     height: 70px;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .menu {
@@ -76,6 +78,7 @@ h1 strong {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .hero-image {
@@ -105,6 +108,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .project strong {
@@ -126,11 +130,15 @@ h2 {
 }
 
 .project-details {
-    width: 500px;
+    width: 50%;
 }
 
 .project-imageContainer {
-    width: 500px;
+    width: 50%;
+}
+
+.project-imageContainer img {
+    max-width: 100%;
 }
 
 .event-list-title {
@@ -143,8 +151,8 @@ h2 {
 }
 
 .event {
-    margin: 10px;
-    width: 480px;
+    margin: 1%;
+    width: 48%;
     border-radius: 10px;
     overflow: hidden;
     flex-shrink: 0;
@@ -184,7 +192,8 @@ h2 {
     height: 150px;
     display: flex;
     align-items: center;
-    justify-content: space-between
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .form-email input {
@@ -242,6 +251,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .footer img {
@@ -250,4 +260,181 @@ h2 {
 
 .footer a {
     color: #fff;
+}
+
+.burger-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, .8);
+    display: none;
+    line-height: 40px;
+    color: white;
+    text-align: center;
+    position: fixed;
+    z-index: 4;
+    top: 5px;
+    left: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 0 1em;
+    }
+
+    .hero {
+        height: auto;
+        position: relative;
+        overflow: hidden;
+        padding: 2em;
+    }
+
+    .hero-image {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2em;
+        z-index: 2;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .burger-button {
+        display: block;
+    }
+
+    .header {
+        display: block;
+        height: auto;
+    }
+
+    .header .logo {
+        text-align: center;
+    }
+
+    .header ol {
+        display: block;
+    }
+
+    .header ol li {
+        height: 50px;
+    }
+
+    .header a {
+        justify-content: center;
+        height: 40px;
+        font-size: 2em;
+        text-decoration: underline;
+        margin-bottom: .5em;
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        left: -100vw;
+        bottom: 0;
+        z-index: 3;
+        background-color: rgba(5, 111, 255, .9);
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .3s;
+    }
+
+    .menu.is-active {
+        left: 0;
+    }
+
+    .project {
+        display: block;
+    }
+
+    .project-imageContainer {
+        width: auto;
+        text-align: center;
+    }
+
+    .project-details {
+        width: auto;
+        font-size: 16px;
+    }
+
+    .project-course, .project-date, .project-url {
+        margin: 0.3em 0;
+    }
+
+    .project-title {
+        font-size: 1.5em;
+        margin-bottom: 0.3em;
+    }
+
+    .project-course {
+        font-size: 0.7em;
+    }
+
+    .project-description {
+        font-size: 0.8em;
+    }
+
+    .event {
+        width: auto;
+        flex-shrink: initial;
+    }
+
+    .event img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    .project-details {
+        font-size: 12px;
+    }
+
+    .event-detail {
+        margin: -2em .5em .5em;
+        padding: 1em;
+    }
+
+    .contact {
+        height: auto;
+        padding: 1em 0;
+        display: block;
+        text-align: center;
+    }
+
+    .form-email button {
+        margin: 1em auto;
+    }
+
+    .form-email h3 {
+        margin-top: 0;
+    }
+
+    .footer {
+        display: block;
+        text-align: center;
+        border: 1px solid transparent;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    h1 {
+        font-size: 1.2em;
+    }
+
+    .hero {
+        padding: 2em 1em;
+    }
 }
