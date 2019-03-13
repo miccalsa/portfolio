@@ -1,0 +1,30 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
+
+.hero {
+  background-color: #BFC6CA;
+  color: #314A66;
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  height: 500px;
+}
+
+.title {
+  text-align: center;
+}
+
+.title .nickname {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 4.5em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+
+
+.bio figure {
+  margin: 0;
+}
