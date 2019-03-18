@@ -14,7 +14,7 @@ ol, ul {
 .hero {
   background-color: #BFC6CA;
   color: #314A66;
-  height: 500px;
+  height: 700px;
 }
 
 .hero .container {
@@ -49,6 +49,31 @@ ol, ul {
   height: 200px;
 }
 
+.bio .contact {
+  margin: 20px;
+}
+
+.bio .contact a {
+  color: #314A66;
+  display: inline-block;
+  font-size: 1.5em;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.profileSections {
+  color: #222222;
+  margin: 10px 30px;
+  min-height: 300px;
+}
+
+.profileSections header {
+  color: #314A66;
+  font-size: 2em;
+  font-weight: lighter;
+  text-decoration: underline;
+}
+
 .footerMenu {
   align-items: center;
   background-color: #314A66;
@@ -77,4 +102,10 @@ ol, ul {
 
 .footerMenu a:hover {
   border-bottom: 2px solid #ffffff;
+}
+
+/* Temporarily hidding these elements */
+
+#skills, #projects, #blog, .footerMenu {
+  display: none;
 }
