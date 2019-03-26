@@ -1,7 +1,10 @@
+/* General HTML rules section */
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 16px;
   margin: 0;
+  margin-bottom: 100px;
   min-height: 100%;
 }
 
@@ -10,6 +13,8 @@ ol, ul {
   margin: 0;
   padding: 0;
 }
+
+/* Hero section */
 
 .hero {
   background-color: #BFC6CA;
@@ -61,18 +66,170 @@ ol, ul {
   text-decoration: none;
 }
 
+/* Profile overall sections */
+
 .profileSections {
   color: #222222;
-  margin: 10px 30px;
+  margin: 10px 60px;
   min-height: 300px;
 }
 
 .profileSections header {
   color: #314A66;
-  font-size: 2em;
+  font-size: 2.2em;
   font-weight: lighter;
-  text-decoration: underline;
+  border-bottom: 3px solid;
+  padding-bottom: 10px;
+  width: 150px;
+  margin-top: 1.5em;
 }
+
+.work-listing {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+/* Sills section */
+
+.skillsSection h2 {
+  color: #314A66;
+  font-size: 1.3em;
+  margin: 10px 0 5px 0;
+}
+
+.skillsSection p {
+  color: rgba(0, 0, 0, .74);
+  font-size: 1.3em;
+  margin-left: 20px;
+}
+
+/* Project Portfolio */
+
+.project-listings {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 335px));
+  margin-top: 3.5em;
+  justify-content: center;
+}
+
+.project {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.project figure {
+  margin: 0;
+}
+
+.project img {
+  width: 100%;
+  vertical-align: top; 
+}
+
+.project-overlay {
+  background: rgba(256, 256, 256, 0.8);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.project:hover .project-overlay {
+  display: flex;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.project .project-title {
+  color: #000000;
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.project .project-stack {
+  color: #314A66;
+  display: block;
+  font-size: 1.4em;
+}
+
+.project .learn-more {
+  display: inline-block;
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  padding: 10px;
+  margin-top: 20px;
+  border: 1px solid #314A66;
+}
+
+.project .learn-more:hover {
+  color: #314A66;
+  background-color: #ffffff;
+}
+
+/* Blog article listing */
+
+.article-preview {
+  border: 1px solid rgba(0, 0, 0, .9);
+  display: grid;
+  grid-template-rows: 250px 70px 110px 30px;
+  padding: 1.5em 2em;
+  margin: 3.5em 0;
+}
+
+.article-preview figure, h2, p, div {
+  margin: 0;
+}
+
+.article-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-preview h2 {
+  font-size: 2em;
+  margin: 10px 0px;
+}
+
+.article-preview .summary p {
+  font-size: 1em;
+  color: rgba(0, 0, 0, .54);
+}
+
+.article-preview .summary .read-more {
+  display: inline-block;
+  text-decoration: none;
+  color: rgba(0, 0, 0, .54);
+  margin-top: 20px;
+  font-size: 0.85em;
+  font-style: italic;
+}
+
+.article-preview .date-tags {
+  text-align: end;
+}
+
+.article-preview .date {
+  font-style: italic;
+}
+
+.article-preview .date::after {
+  content: " • ";
+}
+
+.article-preview .tags {
+  color: #314A66;
+}
+
+/* Footer navigation section */
 
 .footerMenu {
   align-items: center;
@@ -102,10 +259,4 @@ ol, ul {
 
 .footerMenu a:hover {
   border-bottom: 2px solid #ffffff;
-}
-
-/* Temporarily hidding these elements */
-
-#skills, #projects, #blog, .footerMenu {
-  display: none;
 }
