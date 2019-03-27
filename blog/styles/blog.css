@@ -1,0 +1,96 @@
+/* General HTML rules section */
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 100px;
+    min-height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+}
+
+/* Blog general sections */
+
+.blog-container {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: grid;
+    grid-template-rows: 120px 350px 80px 40px 1fr;
+}
+
+.blog-title {
+    font-size: 2.6em;
+    text-align: center;
+}
+
+.blog-cover-img {
+    width: 100%;
+    vertical-align: top;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.author img {
+    width: 55px;
+    border-radius: 50%;
+}
+
+.author span {
+    display: block;
+    margin: 3px 0;
+    text-align: left;
+}
+
+.author .date-and-author {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px 20px;
+}
+
+.date-and-author .written-by {
+    font-size: 1.1em;
+}
+
+.date-and-author .date {
+    font-size: 0.9em;
+    color: rgba(0, 0, 0, .7);
+}
+
+.social-media {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.social-media a {
+    color: #314A66;
+    display: inline-block;
+    font-size: 1.5em;
+    margin: 0 10px;
+    text-decoration: none;
+}
+.article-content {
+    margin-top: 50px;
+}
+
+.article-content p {
+    font-size: 1.05em;
+    line-height: 1.5em;
+}
+
+.article-content h2 {
+    font-size: 1.8em;
+}
+
+.article-content .article-image {
+    text-align: center;
+}
