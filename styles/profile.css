@@ -45,6 +45,10 @@ ol, ul {
   text-align: center;
 }
 
+article.bio p {
+  margin-bottom: 15px;
+}
+
 .hero .bio figure {
   margin: 50px 0 0 0;
 }
@@ -259,4 +263,10 @@ ol, ul {
 
 .footerMenu a:hover {
   border-bottom: 2px solid #ffffff;
+}
+
+/* Temporarily hide uncomplete sections */
+
+.footerMenu, #projects, #blog {
+  display: none;
 }
