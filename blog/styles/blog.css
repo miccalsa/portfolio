@@ -94,3 +94,56 @@ h1, h2, h3, h4, h5, h6 {
 .article-content .article-image {
     text-align: center;
 }
+
+/* iPad */
+
+@media screen and (max-width: 768px) {
+    .blog-container {
+        grid-template-rows: 120px 250px 80px 40px 1fr;
+    }
+
+    .blog-cover-img {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .social-media {
+        font-size: 0.8em;
+    }
+
+    .article-content {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .article-content h2 {
+        font-size: 1.6em;
+    }
+
+    .article-content p {
+        font-size: 1.1em;
+        line-height: 1.45em;
+    }
+}
+
+/* Phones */
+
+@media screen and (max-width: 415px) {
+    .blog-container {
+        grid-template-rows: 120px 200px 80px 40px 1fr;
+    }
+
+    .blog-title {
+        font-size: 1.8em;
+        margin: 1em 0;
+    }
+
+    .article-content h2 {
+        font-size: 1.3em;
+    }
+
+    .article-content p {
+        font-size: 1em;
+        line-height: 1.45em;
+    }
+}
