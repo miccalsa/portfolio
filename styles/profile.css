@@ -19,7 +19,7 @@ ol, ul {
 .hero {
   background-color: #BFC6CA;
   color: #314A66;
-  height: 700px;
+  height: 100vh;
 }
 
 .hero .container {
@@ -27,7 +27,7 @@ ol, ul {
   display: grid;
   grid-template-rows: 175px 1fr;
   margin: 0 auto;
-  width: 1000px;
+  max-width: 1000px;
 }
 
 .hero .title {
@@ -43,6 +43,8 @@ ol, ul {
 
 .hero .bio {
   text-align: center;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 article.bio p {
@@ -267,4 +269,122 @@ article.bio p {
 
 .footerMenu a:hover {
   border-bottom: 2px solid #ffffff;
+}
+
+/* iPad */
+
+@media screen and (max-width: 768px) {
+  .hero .container {
+    grid-template-rows: 125px 1fr;
+  }
+
+  .hero .title .nickname {
+    font-size: 3.8em;
+  }
+
+  .profileSections header {
+    font-size: 2em;
+    margin-top: 0.9em;
+  }
+
+  .skillsSection {
+    margin: 20px 0 0 30px;
+  }
+
+  .skillsSection h2 {
+    font-size: 1.2em;
+  }
+
+  .skillsSection p {
+    font-size: 1.2em;
+  }
+
+  .project-listings {
+    margin-top: 1.5em;
+  }
+
+  .article-preview {
+    margin: 2em 0;
+    grid-template-rows: 200px 60px 110px 15px;
+  }
+}
+
+/* Phones */
+
+@media screen and (max-width: 415px) {
+  .hero .container {
+    grid-template-rows: 100px 1fr;
+  }
+
+  .hero .title .nickname {
+    font-size: 2.7em;
+  }
+
+  .profileSections header {
+    font-size: 1.5em;
+    margin-top: 0.6em;
+  }
+
+  article.bio p {
+    font-size: 0.8em;
+  }
+
+  .profileSections {
+    margin: 10px 30px;
+    min-height: 200px;
+  }
+
+  .skillsSection {
+    margin: 15px 0;
+  }
+
+  .skillsSection h2 {
+    font-size: 1.1em;
+  }
+
+  .skillsSection p {
+    font-size: 0.8em;
+  }
+
+  .project-listings {
+    margin-top: 1.5em;
+  }
+
+  .project .project-title {
+    font-size: 1.1em;
+  }
+
+  .project .project-stack {
+    font-size: 0.9em;
+  }
+
+  .project .learn-more {
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 0.6em;
+  }
+
+  .article-preview {
+    margin: 1.5em 0;
+    padding: 1em;
+    grid-template-rows: 160px 40px 110px 30px;
+  }
+
+  .article-preview h2 {
+    font-size: 1.3em;
+    margin: 5px 0px;
+  }
+
+  .article-preview .summary p {
+    font-size: 0.7em;
+  }
+
+  .article-preview .summary .read-more {
+    font-size: 0.5em;
+    margin-top: 10px;
+  }
+
+  .article-preview .date-tags {
+    font-size: 0.6em;
+  }
 }
