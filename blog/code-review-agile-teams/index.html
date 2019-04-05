@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700|Source+Sans+Pro:300,400,600|Ubuntu:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700|Roboto+Condensed:400,400I,700,700i|Ubuntu:400,700" rel="stylesheet">
     <link rel="stylesheet" href="../styles/blog.css">
     <link rel="stylesheet" href="style.css">
     <title>Code Review on Agile Teams</title>
@@ -37,29 +37,152 @@
             </a>
         </section>
         <article class="article-content">
-            <h2 class="article-subtitle">Lorem ipsum dolor sit amet</h2>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed justo velit. Sed rutrum imperdiet venenatis. Fusce dignissim mi dui. Nam dui sem, pulvinar a sem at, hendrerit gravida odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin quis gravida justo. Integer accumsan lectus orci, id molestie ante ultrices eget. Quisque vel quam condimentum, finibus justo quis, posuere velit.
+                When we talk about Agile teams, we can come up with a big list of characteristics that define them; everybody might have a different opinion of what it is important for their team in order to call themselves “Agile”. If we could come up with a definition, we could say an Agile team is one compound of cross-functional members that are able to create an incrementally tested product. 
             </p>
-            <h2 class="article-subtitle">In eu pulvinar est</h2>
             <p>
-                In eu pulvinar est. Vestibulum eleifend eros quis dui accumsan aliquam. Aenean sed tincidunt sapien. Duis vitae feugiat quam. Vivamus fermentum, diam faucibus vehicula interdum, mauris nulla euismod dui, quis maximus nunc sem eget eros. Maecenas vitae consequat tellus, nec varius sem. Curabitur et ex magna. Sed et efficitur neque. Mauris sagittis enim orci, a vulputate urna ultrices et. Nullam eget enim quis lorem pellentesque elementum eu posuere nulla.
+                In order to have a product to evolve from its origins into what the business has intended, we have to ensure the product is well developed, which means its functionality adjusts to what is expected; and then, we have to ensure the minimal amount of bugs or broken functionality is delivered on each iteration. And for this, a key process in ensuring code quality is “Code Review”.
             </p>
-            <h2 class="article-subtitle">Pellentesque vel vulputate erat</h2>
             <p>
-                Pellentesque vel vulputate erat. Donec porttitor, sapien vel feugiat suscipit, felis est gravida leo, ac finibus ipsum justo nec augue. Cras commodo sem ut mi ornare condimentum. Vivamus a porttitor augue, in condimentum dolor. Sed lorem orci, facilisis vitae nisi a, consequat hendrerit ipsum. Etiam tincidunt convallis ipsum. Nunc sollicitudin bibendum ante nec vestibulum. Donec eu neque varius, gravida nunc non, sodales felis.
+                Now, Code Review is not always a well-accepted concept by developers itself as they have different opinions about the approach taken on different companies and teams; and please let’s not talk about the opinion of some managers with their tight schedules and their <span class="sarcasm">“no time for code review”</span>.
             </p>
-            <figure class="article-image">
-                <img src="../../images/article-placeholder.jpeg" alt="figure image">
-                <figcaption>caption for the figure</figcaption>
-            </figure>
-            <h2 class="article-subtitle">Maecenas blandit</h2>
             <p>
-                Maecenas blandit pellentesque consequat. Curabitur id diam interdum lacus rutrum facilisis non vel nibh. Ut tempor cursus purus, eget pellentesque est sodales vitae. Donec tincidunt rhoncus feugiat. Aliquam erat volutpat. Phasellus mollis vitae eros eu efficitur. Fusce ultrices orci et dolor hendrerit, ut ornare odio pretium.
+                My purpose is to dig a little bit on some misconceptions or bad habits on code review; then discuss on what it should be instead, followed with some tips to perform a good and valuable code review inside an Agile team.
             </p>
-            <h2 class="article-subtitle">Quisque aliquam varius eros nec lacinia</h2>
+            <h2>
+                What it is NOT
+            </h2>
             <p>
-                Quisque aliquam varius eros nec lacinia. Pellentesque nunc lectus, bibendum non malesuada vitae, venenatis ac tellus. Donec ultricies viverra egestas. Nullam sit amet rutrum lorem, sed aliquet sapien. Duis consequat, dolor feugiat aliquet consectetur, mi tortor dapibus lectus, quis elementum est massa ac neque. Mauris accumsan risus turpis, dapibus condimentum metus ultricies a. Curabitur varius, sem fermentum porttitor interdum, orci neque porttitor nibh, nec semper leo neque sed ipsum. Nullam sodales libero nec ligula posuere fermentum. Praesent fringilla, enim nec dictum tempor, metus lectus ultrices velit, in tempus tellus dolor sed lectus.
+                This section has the intention to describe most of the scenarios that happen during a code review which are harmful to the team ecosystem, and instead of helping the product grow in size and quality, it destroys all possibilities of improvement and team collaboration. Here are some situations:
+            </p>
+            <p>
+                <span class="emphasis">NOT a waste of time and team velocity:</span> This is one of the arguments that sound inside the walls of many organizations. Yes!, doing a proper code review takes time. This means that one or more team members have to stop what they are doing in order to review somebody else's code. For certain managers, this means losing velocity which means fewer deliverables. For some developers, this means dragging them out of “the zone” which impacts their productivity.
+            </p>
+            <p>
+                An experienced manager is fully aware that “refactoring” is a costly (time and money) task that needs to be done in order to continue with the next task of the list if it is a blocker. Most of this refactoring is required because in a previous moment of the product, proper code review didn’t take place and lots of flaws (bugs, design, etc) were allowed to continue and now needs to be addressed with probably a ton more of errors. Then, from a developer perspective, it is not true a developer is all the time “in the zone”, there will always be some time that can be allocated to do code review, even if this developer is overwhelmed with tasks and a tight schedule, there is always 10 - 20 minutes that can be used to help a colleague and eventually himself.
+            </p>
+            <p>
+                <span class="emphasis">NOT a wall of shame or public punishment:</span> There are several ways a code review can be performed, but let’s discuss those in which the code review is public and can be seen by others (inside or outside the team). 
+            </p>
+            <p>
+                Yes, a developer which is aware their code will be reviewed by others will try to make a better effort to present a more clean and flawless solution. But here is a mind-blowing fact you weren’t expecting … developers are human beings, therefore, they are entitled to make all sort of mistakes every now and then. Also, as a human, a developer can be fragile or sensitive and this needs to be taken into consideration when doing a code review because we don’t want to destroy our colleague’s morale.
+            </p>
+            <p>
+                During a code review, the goal is to improve the product quality and while doing so, the author shouldn’t be destroyed. Be nice when providing feedback, help them see what is not correct and instead suggest a better approach or solution and be aware that the next time, it might be you in the spotlight.
+            </p>
+            <p>
+                <span class="emphasis">NOT a place for coward reviewers:</span> I know, “coward” is not a nice word to use, but follow me on this one. 
+            </p>
+            <p>
+                We as developers sometimes fall into the “impostor syndrome” in which we feel we are not good enough on certain area or tool while there are others in a team with a certain level of seniority mastering the tool or technology. Now, it doesn’t matter if this senior developer has 15 years experience while you just have 6 months, it is very possible that his code has bugs, even some ‘junior type’ errors that he might have overseen.
+            </p>
+            <p>
+                It is your duty to review his code regardless of his expertise and give a thorough review and provide feedback if needed. If you saw an error and did not report because “he knows better” then you have also a share of responsibility on this bug.
+            </p>
+            <p>
+                <span class="emphasis">NOT for Ego Divas and Mr. Know-It-All:</span> Here I will talk about these two actors which damage the project or team ecosystem. 
+            </p>
+            <p>
+                <span class="underline">Ego Divas:</span> They think their solution is THE solution and they are not willing to take feedback from their teammates. These type of developers will create a bad energy cloud in the team; it is because his teammates will prefer not to argue with him since this type of developer will close himself for feedback and therefore will be ignored, allowing bad code or bugs to enter.
+            </p>
+            <p>
+                <span class="underline">Mr. Know-It-All:</span> They can be on both the contributor or the reviewer. The problem with them is that they always have an opinion for everything and will try to impose their way of thinking. We need to have a balance here, it is very important to have an opinion with arguments in order to help; but we also have to be careful and provide information only under the circumstances that are required, have a healthy debate and be open to hear others, don’t be the <span class="sarcasm">‘my way or no way’</span> guy..
+            </p>
+            <h2>
+                What it SHOULD be about
+            </h2>
+            <p>
+                We covered a little bit what should be avoided in a code review process, we know need to focus the business and team value of having code reviews. Mostly we will focus on what we are looking for as a goal in order to hopefully start doing better code reviews.
+            </p>
+            <p>
+                <span class="emphasis">SHOULD be extra eyes:</span> Our duty is not to judge my colleague’s skill, instead, it is to help my colleague and see if he forgot something and I am able to see it before the code is promoted. In code collaboration, a lot of things can happen that will have an impact such as:
+                <ul>
+                    <li>
+                        Typos: we all must have experienced a frustrating hidden bug for hours, we are sure the code logic is clean but still not working. After a few hours, you noticed that <span class="sarcasm">‘Monthly’</span> was misspelled as <span class="sarcasm">‘Monthlly’</span>
+                    </li>
+                    <li>
+                        Grammar or Semantic errors: not all developers work using their native language, so it is expected for them to be in this situation where the sentence was not correctly built. This type of error might not be of relevance in terms of code quality but it might be of impact for the business.
+                    </li>
+                    <li>
+                        General bugs: we are talking of any type of possible errors that can be present on the code, such as a block that violates the business logic, for example clearing the shopping cart before placing an order.
+                    </li>
+                    <li>
+                        Forgotten debugging lines: while writing code, we use different approaches to test the code is doing what it should be doing and this is fine, what it is not, is removing them from the code. I am pretty sure the end user would not like to see a `console.log(user.password)` on their browser.
+                    </li>
+                    <li>
+                        Sub-optimal code: yes, the code does what it should do, but …. Is this the correct approach? Let another team member reviewing your code weight in and suggest a better and optimal approach.
+                    </li>
+                    <li>
+                        Breaking change to existing functionality: A code contribution can pass all of the above criteria but could be a potential problem. We are talking about code that is optimal and bug-free but it is just one part of a whole system; by including it, could break some other features of the project that are being in use and have been tested already
+                    </li>
+                </ul>
+            </p>
+            <p>
+                <span class="emphasis">SHOULD keep the project standards:</span> A project has its own identity based on the team collaborating on it. How? Well, it can be written in different coding languages, versions of a language, libraries, frameworks, coding styles, business rules, linter rules, etc, etc. When a piece of code is sent to review, it is the responsibility of both (contributor and reviewers) to ensure the code is following the rules and styles the team agreed for the project. This helps the code to be understandable by the others and therefore maintainable.
+            </p>
+            <p>
+                <span class="emphasis">SHOULD keep the team in the same mindset:</span> One of the great things about Agile teams is their team flexibility to take the next task and start working on it. Code review helps the knowledge of the project to be shared with the other teammates, it allows the reviewers to see the code and understand the functionality and new features; with that said, the developers will be ready to give better and more accurate estimations (yes, it helps velocity) and let them be ready to tackle new tasks by understanding the context.
+            </p>
+            <p>
+                <span class="emphasis">SHOULD help understand the project direction:</span> This is very important for big teams and big projects. Business can change direction, new features can be added, others can lose support, decisions can be made on a 5 min meeting, and another myriad of situations can have an impact on the product. A good way to make the team participate in these business decisions is by being reviewers and see for themselves the introduced changes and even have an opinion on the impact these changes can have on the short or long term. Some may think this is not a valid point or even see it as a very stretch point, but on my experience, I have seen pull requests being rejected because the ‘new idea’ at the end was going to create problems with the product and deliveries.
+            </p>
+            <p>
+                <span class="emphasis">SHOULD be a tool for developers to learn:</span> IIt doesn’t matter if you are a junior or senior developer, there is so much we can learn from other colleague’s code. In a single code collaboration we can find many things such as: a method from the language we weren’t aware of, a new library that makes life easier, a feature of the framework you didn’t know existed, a cleaner way of doing what you thought you did well, new ways or solutions for a problem, etc. And just like that, you skillset was increased by just reviewing code.
+            </p>
+            <h2>
+                How to make better code reviews
+            </h2>
+            <p>
+                Great, we now know a few things of what should be done and what not during a code review. We have also learned about the value it adds to the teams and the business. Now let's address a few ways of how to make a proper code review, of course, there might be more but this is a good list to start.
+            </p>
+            <p>
+                <span class="emphasis">Checklists:</span> Every project and every team is different, I cannot tell what to look or not look on a review because every case is different. But, as you get to know your team and project better, you will start noticing a few details that are often overseen by your colleagues like forgotten debugging lines, methods with multiple responsibilities, forgotten ‘TODO’ section or unused code left, does it include the testing code? etc. All these common scenarios that happen on your team should be part of your checklist, this way you will always remember what to look for and not ‘forget’ as it happened to the contributor.
+            </p>
+            <p>
+                <span class="emphasis">Code intent:</span> Is the code really doing what it says it should do? As a simple example, if the pull request intention is for a new record to be created, then: does the code has the correct values to capture the new record? is the data being validated? is it actually creating a new record? etc. We should always take the code not just as a blob of code but to actually question the purpose and validate it fulfills its purpose.
+            </p>
+            <p>
+                <span class="emphasis">Commitment:</span> When doing a code review, we expect commitment from the reviewers. Yes, code review takes time and sometimes it is difficult to allocate time in your schedule to do them. The clue here is “dedicate time but not a lot”. It sounds contradictory but it is not, if we dedicate consecutive hours doing a review (especially with huge new code) we start by paying attention to the details but after a few lines (or files), we just drift away and start ‘skimming’ the code; at this point the code review is worthless, we are not putting attention to the logic and the context, we just look for the obvious (and sometimes irrelevant) and forgo other problems that require more attention.
+            </p>
+            <p>
+                <span class="emphasis">Do not assume:</span> When doing a review, everything might seem to be good and even pass your checklist. What we cannot do is assume that everything works. I understand this might be a little too much and even more time consuming, but it is a good practice and can be used whenever the time allows it, on cases for big changes or even on new team members (not because they are not good, but instead because they are new to the product and might not see the whole picture).
+            </p>
+            <p>
+                What can we do to ensure we are no assuming? Download the code, run it, do a smoke test, run unit/integration tests, check test coverage, use your own IDE to check for small details that are not easy to spot.
+            </p>
+            <p>
+                <span class="emphasis">Done does not mean is done:</span> Time constraints and business pressure is the biggest enemy of code development. We can consider worthless to invest time in code review and best practices if at the end it is accepted to be merged code that does the requested functionality but technically it is not complete. Try to avoid merging code that:
+                <ul>
+                    <li>Has no tests or don’t have them complete</li>
+                    <li>Can definitely be improved</li>
+                    <li>Is not clean and not following standards/best practices</li>
+                    <li>
+                        Has Tech Debt (<strong>*</strong> this is valid only if an issue/story was created to address the Tech Debt later and is not forgotten)
+                    </li>
+                </ul>
+            </p>
+            <p>
+                <span class="emphasis">Reviewers and feedback:</span> When asked to be a reviewer of code from a colleague, the golden rule is to be professional and respectful. We have already addressed what should and should not be done during a code review. But as a reviewer we should consider the following:
+                <ul>
+                    <li>
+                        Were you asked to be a reviewer? Be kind and do a proper review, it is for the sake of the project and the team.
+                    </li>
+                    <li>
+                        Want to give feedback? Be polite, precise and a team player. If you want to provide feedback, then please first point out what needs to be addressed and provide your opinion of what needs to be done and how applying the change will impact the solution. And finally, be a team player and not just point out the error but also help in the solution, perhaps provide some documentation as a reference, provide a code snippet with the change, etc. All of these helps both the process and the requester.
+                    </li>
+                    <li>
+                        Did you provide feedback? Please keep track of the progress, do not assume your input was addressed as suggested.
+                    </li>
+                    <li>
+                        Be open to a debate of ideas. Your opinion is not the only that counts, the contributor might have its own reason, others colleagues can have their own opinions; this will open debate and it is expected from you to collaborate in the final solution.
+                    </li>
+                </ul>
+            </p>
+            <h2>
+                Conclusion
+            </h2>
+            <p>
+                As you can see, code review should be an ability and a technique that all Agile teams should be implementing as part of the developing process. We have seen the value it adds both, to the team and the business, in order to fastly develop a product without falling on painful re-factorizations, be able to collaborate better as a developer and even increase your skill set. Now, please go help your team and start doing code reviews.
             </p>
         </article>
     </section>

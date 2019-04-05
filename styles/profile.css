@@ -274,6 +274,9 @@ article.bio p {
 /* iPad */
 
 @media screen and (max-width: 768px) {
+  .hero {
+    height: 80vh;
+  }
   .hero .container {
     grid-template-rows: 125px 1fr;
   }
